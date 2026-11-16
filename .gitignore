@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.eggs/
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+.mypy_cache/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Certificate & Private Key Security (CRITICAL)
+*.p12
+*.pfx
+*.pem
+*.key
+*.cer
+*.crt
+.env
+*.env.*
+
+# Local User Configurations & Cache
+.firmar-pdf/
+.pdf-crypto-signer/
+*.lock
+*.log
+
+# Test signed outputs
+*-signed.pdf
+*_firmado.pdf
+*.tmp
+tmp/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

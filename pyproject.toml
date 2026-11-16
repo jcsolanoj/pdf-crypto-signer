@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-crypto-signer"
+version = "0.2.0"
+description = "Herramienta CLI y GUI para firma electrónica criptográfica de PDFs (PKCS#12 / PAdES) con estampa QR."
+authors = [{ name = "jcsolanoj" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["pdf", "signature", "pkcs12", "pades", "pyhanko", "qr", "cli", "gui"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security :: Cryptography",
+]
+dependencies = [
+    "pyhanko[image-support]>=0.30.0",
+    "pymupdf>=1.24.0",
+    "cryptography>=42.0.0",
+    "keyring>=24.0.0",
+    "qrcode>=7.4.0",
+    "pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+firmar-pdf = "firma_pdf.cli:main"
+
+[project.urls]
+Repository = "https://github.com/jcsolanoj/pdf-crypto-signer"
+Issues = "https://github.com/jcsolanoj/pdf-crypto-signer/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["firma_pdf*"]
